@@ -2004,6 +2004,16 @@ nav .fa-solid {
     padding: 25px 15px;
     margin-top: 50px;
   }
+
+  nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px 0;
+  position: relative;
+  z-index: 100;
+  }
 }
 
 @media only screen and (max-width: 480px) {
