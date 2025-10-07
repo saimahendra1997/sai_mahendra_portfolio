@@ -24,12 +24,7 @@ body[data-theme="dark"] {
   --accent-primary: #ff004f;
   --accent-secondary: #26cab7;
   --shadow-color: rgba(255, 0, 79, 0.3);
-  --hero-gradient: linear-gradient(
-    135deg,
-    #0a0a0a 0%,
-    #1a0a1f 50%,
-    #0a0a0a 100%
-  );
+  --hero-gradient: linear-gradient(135deg, #0a0a0a 0%, #1a0a1f 50%, #0a0a0a 100%);
 }
 
 /* Light Theme */
@@ -47,12 +42,7 @@ body[data-theme="light"] {
   --accent-primary: #ff004f;
   --accent-secondary: #26cab7;
   --shadow-color: rgba(0, 0, 0, 0.1);
-  --hero-gradient: linear-gradient(
-    135deg,
-    #ffffff 0%,
-    #f0f0ff 50%,
-    #ffffff 100%
-  );
+  --hero-gradient: linear-gradient(135deg, #ffffff 0%, #f0f0ff 50%, #ffffff 100%);
 }
 
 body {
@@ -75,6 +65,7 @@ body {
   transition: all 0.3s ease;
   z-index: 100;
   font-size: 32px;
+  flex-shrink: 0;
 }
 
 .theme-toggle:hover {
@@ -89,6 +80,7 @@ body {
   transition: all 0.3s ease;
   opacity: 1;
   transform: rotate(0deg) scale(1);
+  line-height: 1;
 }
 
 body[data-theme="light"] .theme-toggle::before {
@@ -97,6 +89,11 @@ body[data-theme="light"] .theme-toggle::before {
 
 .theme-toggle i {
   display: none;
+}
+
+.sun-icon,
+.moon-icon {
+  display: none !important;
 }
 
 /* ===============================================
@@ -247,7 +244,11 @@ nav {
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 20px 0;
-  gap: 10px;
+  gap: 15px;
+}
+
+nav > * {
+  flex-shrink: 0;
 }
 
 /* Modern Logo */
@@ -416,11 +417,7 @@ nav ul li a:hover::after {
 #about {
   padding: 100px 0 80px 0;
   color: var(--text-tertiary);
-  background: linear-gradient(
-    180deg,
-    var(--bg-secondary) 0%,
-    var(--bg-primary) 100%
-  );
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
   position: relative;
   transition: background 0.3s ease;
 }
@@ -752,11 +749,7 @@ nav ul li a:hover::after {
 
 #projects {
   padding: 100px 0;
-  background: linear-gradient(
-    180deg,
-    var(--bg-primary) 0%,
-    var(--bg-secondary) 100%
-  );
+  background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
   position: relative;
   overflow: hidden;
   transition: background 0.3s ease;
@@ -1003,12 +996,7 @@ nav ul li a:hover::after {
 
 #portfolio {
   padding: 100px 0;
-  background: linear-gradient(
-    180deg,
-    var(--bg-primary) 0%,
-    var(--bg-secondary) 50%,
-    var(--bg-primary) 100%
-  );
+  background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-primary) 100%);
   position: relative;
   overflow: hidden;
   transition: background 0.3s ease;
@@ -1039,12 +1027,7 @@ nav ul li a:hover::after {
 .portfolio-header .sub-title {
   font-size: 48px;
   font-weight: 700;
-  background: linear-gradient(
-    135deg,
-    var(--text-primary) 0%,
-    #ff004f 50%,
-    #26cab7 100%
-  );
+  background: linear-gradient(135deg, var(--text-primary) 0%, #ff004f 50%, #26cab7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1380,11 +1363,7 @@ nav ul li a:hover::after {
 
 #contact {
   padding: 100px 0 0 0;
-  background: linear-gradient(
-    180deg,
-    var(--bg-primary) 0%,
-    var(--bg-secondary) 100%
-  );
+  background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
   position: relative;
   transition: background 0.3s ease;
 }
@@ -1413,12 +1392,7 @@ nav ul li a:hover::after {
 .contact-header .sub-title {
   font-size: 48px;
   font-weight: 700;
-  background: linear-gradient(
-    135deg,
-    var(--text-primary) 0%,
-    #ff004f 50%,
-    #26cab7 100%
-  );
+  background: linear-gradient(135deg, var(--text-primary) 0%, #ff004f 50%, #26cab7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1804,10 +1778,29 @@ nav .fa-solid {
   }
 
   .theme-toggle {
-    width: 50px;
-    height: 50px;
-    font-size: 26px;
-    margin-right: 10px;
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+
+  .theme-toggle::before {
+    line-height: 1;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding: 20px 0;
+    position: relative;
+    z-index: 1002;
+    gap: 12px;
+  }
+
+  nav > .logo-container {
+    margin-right: auto;
   }
 
   #header {
@@ -1844,22 +1837,11 @@ nav .fa-solid {
     font-size: 14px;
   }
 
-  nav .fa-solid.fa-bars {
-    display: block;
-    font-size: 25px;
-    z-index: 1001;
-    position: relative;
-  }
-
   nav .fa-solid {
     display: block;
     font-size: 25px;
     z-index: 1001;
     position: relative;
-  }
-
-  nav ul .fa-solid {
-    display: block;
   }
 
   nav ul {
@@ -1876,7 +1858,7 @@ nav .fa-solid {
   }
 
   body.menu-open::before {
-    content: "";
+    content: '';
     position: fixed;
     top: 0;
     left: 0;
@@ -1891,6 +1873,18 @@ nav .fa-solid {
     display: block;
   }
 
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    position: relative;
+    z-index: 1002;
+  }
+
+    
   nav {
     display: flex;
     align-items: center;
