@@ -708,18 +708,38 @@
           tabcontent.classList.remove("active-tab");
         }
         document.getElementById(tabname).classList.add("active-tab");
-        document.querySelector('button[onclick="opentab(\'' + tabname + '\')"]').classList.add("active-link");
+        event.currentTarget.classList.add("active-link");
       }
     </script>
 
     <script>
       var sidemenu = document.getElementById("sidemenu");
       function openmenu() {
-        sidemenu.style.right = "0";
+          sidemenu.style.right = "0";
+          document.body.style.overflow = "hidden";
       }
       function closemenu() {
-        sidemenu.style.right = "-200px";
+          sidemenu.style.right = "-200px";
+          document.body.style.overflow = "auto";
       }
+      document.addEventListener('DOMContentLoaded', function() {
+          const navLinks = document.querySelectorAll('#sidemenu a[href^="#"]');
+          navLinks.forEach(link => {
+              link.addEventListener('click', function() {
+                  setTimeout(() => {
+                      closemenu();
+                  }, 300);
+              });
+          });
+          
+          document.addEventListener('click', function(e) {
+              if (sidemenu.style.right === "0px" && 
+                  !sidemenu.contains(e.target) && 
+                  !e.target.classList.contains('fa-bars')) {
+                  closemenu();
+              }
+          });
+      });
     </script>
 
     <script>
