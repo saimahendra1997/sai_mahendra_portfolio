@@ -2005,14 +2005,16 @@ nav .fa-solid {
     margin-top: 50px;
   }
 
-  nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 20px 0;
-  position: relative;
-  z-index: 100;
+  nav ul {
+    background: #ff004f;
+    position: fixed;
+    top: 0;
+    right: -200px;
+    width: 200px;
+    height: 100vh;
+    padding-top: 50px;
+    z-index: 1000;
+    transition: right 0.5s;
   }
 }
 
