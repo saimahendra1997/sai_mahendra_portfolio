@@ -708,7 +708,7 @@
           tabcontent.classList.remove("active-tab");
         }
         document.getElementById(tabname).classList.add("active-tab");
-        event.currentTarget.classList.add("active-link");
+        document.querySelector('button[onclick="opentab(\'' + tabname + '\')"]').classList.add("active-link");
       }
     </script>
 
