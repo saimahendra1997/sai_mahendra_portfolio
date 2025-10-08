@@ -584,12 +584,29 @@ nav ul li a:hover::after {
   border: 2px solid var(--border-secondary);
   transition: all 0.3s ease;
   box-shadow: 0 5px 15px var(--shadow-color);
+  cursor: pointer;
 }
 
 .experience-card:hover {
-  transform: translateY(-5px);
-  border-color: #26cab7;
-  box-shadow: 0 10px 25px rgba(38, 202, 183, 0.2);
+  transform: translateY(-8px);
+  border-color: #ff004f;
+  box-shadow: 0 10px 25px rgba(255, 0, 79, 0.3);
+  background: var(--bg-card);
+}
+
+.experience-card:hover h3,
+.experience-card:hover .company-name,
+.experience-card:hover .duration i,
+.experience-card:hover .location i {
+  color: #ff004f;
+}
+
+.experience-card h3,
+.experience-card .company-name,
+.experience-card .duration,
+.experience-card .location,
+.experience-card .highlight-badge {
+  transition: color 0.3s ease, background 0.3s ease, transform 0.3s ease;
 }
 
 .experience-header {
@@ -619,6 +636,7 @@ nav ul li a:hover::after {
 
 .company-name i {
   color: #ff004f;
+  transition: color 0.3s ease;
 }
 
 .experience-meta {
@@ -641,6 +659,7 @@ nav ul li a:hover::after {
 .location i {
   color: #ff004f;
   font-size: 12px;
+  transition: color 0.3s ease;
 }
 
 .experience-highlights {
@@ -652,12 +671,20 @@ nav ul li a:hover::after {
 
 .highlight-badge {
   background: var(--border-secondary);
-  color: #7b106b;
+  color: var(--text-primary);
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 13px;
   font-weight: 500;
-  border: 1px solid #26cab7;
+  border: 1px solid var(--border-color);
+}
+
+.highlight-badge:hover {
+  background: #ff004f;
+  color: #fff;
+  border-color: #ff004f;
+  transform: scale(1.08);
+  box-shadow: 0 5px 15px rgba(255, 0, 79, 0.4);
 }
 
 /* Modern Education Section */
