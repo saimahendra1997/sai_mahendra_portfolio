@@ -609,7 +609,7 @@ nav ul li a:hover::after {
 }
 
 .company-name {
-  color: #26cab7;
+  color: #0aaae4;
   font-size: 16px;
   font-weight: 500;
   display: flex;
@@ -652,7 +652,7 @@ nav ul li a:hover::after {
 
 .highlight-badge {
   background: var(--border-secondary);
-  color: #26cab7;
+  color: #7b106b;
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 13px;
@@ -711,7 +711,7 @@ nav ul li a:hover::after {
 }
 
 .university {
-  color: #26cab7;
+  color: #0493aa;
   font-size: 16px;
   font-weight: 500;
   margin-bottom: 8px;
