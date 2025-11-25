@@ -1,860 +1,947 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sai Mahendra - Software Developer</title>
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <script
-      src="https://kit.fontawesome.com/99a28c3429.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <div id="header">
-      <div class="container">
-        <nav>
-          <div class="logo-container">
-            <span class="logo-text">SM</span>
-          </div>
-          <ul id="sidemenu">
-            <li><a href="#header">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#portfolio">Experience</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
-          </ul>
-          <!-- Theme Toggle Button -->
-          <button
-            id="theme-toggle"
-            class="theme-toggle"
-            aria-label="Toggle theme"
-          >
-            <i class="fa-solid fa-sun sun-icon"></i>
-            <i class="fa-solid fa-moon moon-icon"></i>
-          </button>
-          <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/99a28c3429.js" crossorigin="anonymous"></script>
+</head>
+<body data-theme="dark">
+    <!-- Animated Background Particles -->
+    <div class="particles-container" id="particles"></div>
+    
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="#home" class="logo">
+                    <span class="logo-icon">SM</span>
+                    <span class="logo-text">Sai Mahendra</span>
+                </a>
+                
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <i class="fa-solid fa-sun"></i>
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
         </nav>
+    </header>
 
-        <!-- Animated Background -->
-        <div class="hero-background">
-          <div class="code-animation">
-            <div class="code-line" style="--delay: 0s">&lt;developer&gt;</div>
-            <div class="code-line" style="--delay: 0.5s">
-              function buildSolutions() {
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="pulse-dot"></span>
+                <span>Actively Seeking New Opportunities</span>
             </div>
-            <div class="code-line" style="--delay: 1s">return innovation;</div>
-            <div class="code-line" style="--delay: 1.5s">}</div>
-            <div class="code-line" style="--delay: 2s">&lt;/developer&gt;</div>
-          </div>
-          <div class="floating-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
-            <div class="shape shape-4"></div>
-          </div>
-        </div>
-
-        <div class="header-text">
-          <p class="job-title">Software Developer - Java</p>
-          <h1>Hi, I'm <span class="name-highlight">Sai Mahendra</span></h1>
-          <p class="company-info">Currently Working at Zyter TruCare</p>
-          <div class="header-cta">
-            <a href="#contact" class="cta-button primary">
-              <span>Get In Touch</span>
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
-            <a href="#projects" class="cta-button secondary">
-              <span>View Projects</span>
-              <i class="fa-solid fa-code"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!--------- About Section ---------->
-    <div id="about">
-      <div class="container">
-        <div class="about-header">
-          <h1 class="sub-title">About Me</h1>
-          <p class="about-intro">
-            I'm Sai Mahendra Penumakula, a Computer Science graduate from Auburn
-            University at Montgomery. With a Bachelor's in Electronics and
-            Communication Engineering from Sathyabhama Institute of Science and
-            Technology, I've honed my skills in Java development over three
-            years at Fidel Technology Solutions Ltd. Now at Zyter TruCare, I'm
-            expanding my expertise in Java, Angular, TypeScript, Microservices,
-            T-SQL, SQL Server, Unit Tests, API Integration Tests and AWS,
-            crafting innovative solutions for today's challenges.
-          </p>
-        </div>
-
-        <div class="tab-titles">
-          <p class="tab-links active-link" onclick="opentab('skills')">
-            <i class="fa-solid fa-code"></i> Skills
-          </p>
-          <p class="tab-links" onclick="opentab('experience')">
-            <i class="fa-solid fa-briefcase"></i> Experience
-          </p>
-          <p class="tab-links" onclick="opentab('education')">
-            <i class="fa-solid fa-graduation-cap"></i> Education
-          </p>
-        </div>
-
-        <div class="tab-contents active-tab" id="skills">
-          <div class="skills-grid">
-            <div class="skill-category">
-              <h3><i class="fa-solid fa-code"></i> Languages</h3>
-              <div class="skill-tags">
-                <span class="skill-tag">Java</span>
-                <span class="skill-tag">HTML</span>
-                <span class="skill-tag">CSS</span>
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">TypeScript</span>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <h3><i class="fa-solid fa-desktop"></i> Frontend</h3>
-              <div class="skill-tags">
-                <span class="skill-tag">Angular</span>
-                <span class="skill-tag">React</span>
-                <span class="skill-tag">jQuery</span>
-                <span class="skill-tag">Bootstrap</span>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <h3><i class="fa-solid fa-server"></i> Backend</h3>
-              <div class="skill-tags">
-                <span class="skill-tag">Spring Boot</span>
-                <span class="skill-tag">Spring</span>
-                <span class="skill-tag">Hibernate</span>
-                <span class="skill-tag">JSP</span>
-                <span class="skill-tag">JDBC</span>
-                <span class="skill-tag">Spring Data JPA</span>
-                <span class="skill-tag">RESTful APIs</span>
-                <span class="skill-tag">Spring MVC</span>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <h3><i class="fa-solid fa-database"></i> Databases</h3>
-              <div class="skill-tags">
-                <span class="skill-tag">MySQL</span>
-                <span class="skill-tag">SQL Server</span>
-                <span class="skill-tag">MongoDB</span>
-                <span class="skill-tag">PostgreSQL</span>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <h3><i class="fa-brands fa-aws"></i> Cloud & Tools</h3>
-              <div class="skill-tags">
-                <span class="skill-tag">AWS</span>
-                <span class="skill-tag">Apache Tomcat</span>
-                <span class="skill-tag">Node.js</span>
-                <span class="skill-tag">Git</span>
-                <span class="skill-tag">Maven</span>
-                <span class="skill-tag">JUnit</span>
-                <span class="skill-tag">Mockito</span>
-                <span class="skill-tag">JIRA</span>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <h3><i class="fa-solid fa-building"></i> Oracle Tech</h3>
-              <div class="skill-tags">
-                <span class="skill-tag">BRM</span>
-                <span class="skill-tag">OSB</span>
-                <span class="skill-tag">OSM</span>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <h3><i class="fa-solid fa-laptop-code"></i> IDEs</h3>
-              <div class="skill-tags">
-                <span class="skill-tag">IntelliJ</span>
-                <span class="skill-tag">VS Code</span>
-                <span class="skill-tag">Eclipse</span>
-                <span class="skill-tag">STS</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="tab-contents" id="experience">
-          <div class="experience-grid">
-            <div class="experience-card">
-              <div class="experience-header">
-                <div>
-                  <h3>Software Developer</h3>
-                  <p class="company-name">
-                    <i class="fa-solid fa-building"></i> Zyter TruCare
-                  </p>
-                </div>
-                <div class="experience-meta">
-                  <span class="duration"
-                    ><i class="fa-solid fa-calendar"></i> April 2024 -
-                    Present</span
-                  >
-                  <span class="location"
-                    ><i class="fa-solid fa-location-dot"></i> Denton, TX</span
-                  >
-                </div>
-              </div>
-              <div class="experience-highlights">
-                <span class="highlight-badge">Healthcare Tech</span>
-                <span class="highlight-badge">Spring Boot 3</span>
-                <span class="highlight-badge">Spring Security</span>
-                <span class="highlight-badge">Angular</span>
-              </div>
-            </div>
-
-            <div class="experience-card">
-              <div class="experience-header">
-                <div>
-                  <h3>Software Developer</h3>
-                  <p class="company-name">
-                    <i class="fa-solid fa-building"></i> Singtel
-                    Telecommunications Ltd
-                  </p>
-                </div>
-                <div class="experience-meta">
-                  <span class="duration"
-                    ><i class="fa-solid fa-calendar"></i> May 2018 - October
-                    2021</span
-                  >
-                  <span class="location"
-                    ><i class="fa-solid fa-location-dot"></i> Chennai,
-                    India</span
-                  >
-                </div>
-              </div>
-              <div class="experience-highlights">
-                <span class="highlight-badge">Billing Systems</span>
-                <span class="highlight-badge">Oracle BRM</span>
-                <span class="highlight-badge">Microservices</span>
-                <span class="highlight-badge">AWS</span>
-                <span class="highlight-badge">React</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="tab-contents" id="education">
-          <div class="education-grid">
-            <div class="education-card">
-              <div class="degree-icon">
-                <i class="fa-solid fa-user-graduate"></i>
-              </div>
-              <div class="education-details">
-                <h3>Master's in Computer Science</h3>
-                <p class="university">
-                  <i class="fa-solid fa-school"></i> Auburn University At
-                  Montgomery
-                </p>
-                <p class="grad-year">
-                  <i class="fa-solid fa-calendar-check"></i> Graduated 2023
-                </p>
-              </div>
-            </div>
-
-            <div class="education-card">
-              <div class="degree-icon">
-                <i class="fa-solid fa-user-graduate"></i>
-              </div>
-              <div class="education-details">
-                <h3>Bachelor's in Electronics and Communication Engineering</h3>
-                <p class="university">
-                  <i class="fa-solid fa-school"></i> Sathyabama Institute of
-                  Science and Technology
-                </p>
-                <p class="grad-year">
-                  <i class="fa-solid fa-calendar-check"></i> Graduated 2018
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!---------- Projects -------->
-    <div id="projects">
-      <div class="container">
-        <div class="section-header">
-          <h1 class="section-title">Featured Projects</h1>
-          <p class="section-subtitle">
-            Innovative solutions built with modern technologies
-          </p>
-        </div>
-        <div class="projects-grid">
-          <div class="project-card" data-tech="angular">
-            <div class="project-icon-wrapper">
-              <i class="fa-brands fa-angular"></i>
-              <div class="icon-glow"></div>
-            </div>
-            <div class="project-content">
-              <h2>Angular-Staff</h2>
-              <p>
-                Full-stack CRUD application combining Angular's reactive
-                frontend with Spring Boot's robust backend architecture.
-              </p>
-              <div class="tech-stack">
-                <span class="tech-badge">Angular</span>
-                <span class="tech-badge">Spring Boot</span>
-                <span class="tech-badge">REST API</span>
-              </div>
-            </div>
-            <a
-              href="https://github.com/saimahendra1997/SpringbootAngularCRUDFullStack"
-              target="_blank"
-              class="project-link"
-            >
-              <span>View Project</span>
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-
-          <div class="project-card" data-tech="spring">
-            <div class="project-icon-wrapper">
-              <i class="fa-solid fa-user-tie"></i>
-              <div class="icon-glow"></div>
-            </div>
-            <div class="project-content">
-              <h2>Job Portal</h2>
-              <p>
-                Comprehensive job portal web application featuring advanced
-                search, filtering, and application management capabilities.
-              </p>
-              <div class="tech-stack">
-                <span class="tech-badge">Spring Boot</span>
-                <span class="tech-badge">MySQL</span>
-                <span class="tech-badge">JSP</span>
-              </div>
-            </div>
-            <a
-              href="https://github.com/saimahendra1997/Mahi-sJobPortal"
-              target="_blank"
-              class="project-link"
-            >
-              <span>View Project</span>
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-
-          <div class="project-card" data-tech="react">
-            <div class="project-icon-wrapper">
-              <i class="fa-solid fa-cart-shopping"></i>
-              <div class="icon-glow"></div>
-            </div>
-            <div class="project-content">
-              <h2>Spring-React-Shop</h2>
-              <p>
-                Modern e-commerce platform with seamless shopping experience,
-                built on Spring Boot MVC and React integration.
-              </p>
-              <div class="tech-stack">
-                <span class="tech-badge">React</span>
-                <span class="tech-badge">Spring MVC</span>
-                <span class="tech-badge">JPA</span>
-              </div>
-            </div>
-            <a
-              href="https://github.com/saimahendra1997/SpringBootReact-EcommerceWebsite"
-              target="_blank"
-              class="project-link"
-            >
-              <span>View Project</span>
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-
-          <div class="project-card" data-tech="microservices">
-            <div class="project-icon-wrapper">
-              <i class="fa-solid fa-diagram-project"></i>
-              <div class="icon-glow"></div>
-            </div>
-            <div class="project-content">
-              <h2>QuizForge Microservices</h2>
-              <p>
-                Scalable distributed system with independently deployable quiz
-                and question services using microservices architecture.
-              </p>
-              <div class="tech-stack">
-                <span class="tech-badge">Microservices</span>
-                <span class="tech-badge">Spring Cloud</span>
-                <span class="tech-badge">Eureka</span>
-              </div>
-            </div>
-            <a
-              href="https://github.com/saimahendra1997/SpringBoot-MicroServices"
-              target="_blank"
-              class="project-link"
-            >
-              <span>View Project</span>
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!---------- Portfolio -------->
-    <div id="portfolio">
-      <div class="container">
-        <div class="portfolio-header">
-          <h1 class="sub-title">Professional Experience</h1>
-          <p class="portfolio-subtitle">
-            Building scalable solutions across telecommunications and healthcare
-            industries
-          </p>
-        </div>
-
-        <div class="portfolio-grid">
-          <!-- Singtel Card -->
-          <div class="portfolio-card">
-            <div class="card-image-container">
-              <img
-                src="Images/Singtel.png"
-                alt="Singtel Telecommunications"
-                class="portfolio-image"
-              />
-              <div class="image-overlay">
-                <div class="overlay-content">
-                  <i class="fa-solid fa-tower-cell"></i>
-                  <p>Telecommunications</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="card-content">
-              <div class="card-header">
-                <h3>Singtel Telecommunications</h3>
-                <span class="company-badge">Telecom</span>
-              </div>
-
-              <div class="role-info">
-                <p class="role-title">
-                  <i class="fa-solid fa-briefcase"></i> Software Developer
-                </p>
-                <p class="duration">
-                  <i class="fa-solid fa-calendar"></i> May 2018 - October 2021
-                </p>
-                <p class="location">
-                  <i class="fa-solid fa-location-dot"></i> Chennai, India
-                </p>
-              </div>
-
-              <p class="project-summary">
-                Modernized a high-traffic billing system handling 10,000+
-                transactions per second using microservices architecture with
-                Oracle BRM as the central billing engine and OSB as the API
-                gateway.
-              </p>
-
-              <div class="tech-highlights">
-                <span class="tech-pill">Oracle BRM</span>
-                <span class="tech-pill">Oracle OSB</span>
-                <span class="tech-pill">Spring Boot</span>
-                <span class="tech-pill">React</span>
-                <span class="tech-pill">AWS</span>
-              </div>
-
-              <div class="achievements">
-                <h4><i class="fa-solid fa-trophy"></i> What I Built</h4>
-                <ul>
-                  <li>
-                    <span class="bullet-icon">🔌</span> Designed REST APIs for
-                    Subscription Service with business logic to validate user
-                    access and check subscription status against cached plan
-                    details
-                  </li>
-                  <li>
-                    <span class="bullet-icon">🔄</span> Implemented
-                    service-to-service calls through OSB (API Gateway) to query
-                    BRM for real-time billing data, handling protocol
-                    translation from REST to BRM format
-                  </li>
-                  <li>
-                    <span class="bullet-icon">💳</span> Built Invoice & Payments
-                    Service managing the complete payment lifecycle—confirming
-                    transactions, updating statuses, and triggering invoice
-                    generation
-                  </li>
-                  <li>
-                    <span class="bullet-icon">⚡</span> Optimized system
-                    throughput through data caching, background workers for slow
-                    tasks, and AWS auto-scaling for demand spikes
-                  </li>
-                  <li>
-                    <span class="bullet-icon">🚀</span> Collaborated with
-                    architects on API design and DevOps team to set up CI/CD
-                    pipelines with Jenkins and CloudWatch monitoring
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Zyter Card -->
-          <div class="portfolio-card">
-            <div class="card-image-container">
-              <img
-                src="Images/Zyter.png"
-                alt="Zyter TruCare"
-                class="portfolio-image"
-              />
-              <div class="image-overlay">
-                <div class="overlay-content">
-                  <i class="fa-solid fa-heart-pulse"></i>
-                  <p>Healthcare Tech</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="card-content">
-              <div class="card-header">
-                <h3>Zyter TruCare</h3>
-                <span class="company-badge active">Current</span>
-              </div>
-
-              <div class="role-info">
-                <p class="role-title">
-                  <i class="fa-solid fa-briefcase"></i> Software Developer
-                </p>
-                <p class="duration">
-                  <i class="fa-solid fa-calendar"></i> April 2024 - Present
-                </p>
-                <p class="location">
-                  <i class="fa-solid fa-location-dot"></i> Denton, TX
-                </p>
-              </div>
-
-              <p class="project-summary">
-                Leading technical modernization of a monolithic healthcare
-                application, focusing on security enhancements, automation, and
-                upgrading to the latest Spring Boot and Java versions.
-              </p>
-
-              <div class="tech-highlights">
-                <span class="tech-pill">Spring Boot 3</span>
-                <span class="tech-pill">Java 17</span>
-                <span class="tech-pill">Angular</span>
-                <span class="tech-pill">OAuth2/JWT</span>
-                <span class="tech-pill">OpenAPI</span>
-              </div>
-
-              <div class="achievements">
-                <h4><i class="fa-solid fa-trophy"></i> What I Built</h4>
-                <ul>
-                  <li>
-                    <span class="bullet-icon">📄</span> Built dynamic PDF
-                    generation system using Aspose for healthcare
-                    correspondence, automating document creation and cutting
-                    manual processing by 30%
-                  </li>
-                  <li>
-                    <span class="bullet-icon">🔒</span> Migrated critical APIs
-                    from GET to POST methods to securely handle 50+ parameters,
-                    significantly improving security compliance and data
-                    protection
-                  </li>
-                  <li>
-                    <span class="bullet-icon">⬆️</span> Led major application
-                    upgrade from Spring Boot 2.7 to 3.5.3—including Spring
-                    Framework 6, Java 17, and complete javax to jakarta
-                    namespace migration
-                  </li>
-                  <li>
-                    <span class="bullet-icon">🛡️</span> Rebuilt authentication
-                    system with modern OAuth2 and JWT, replacing deprecated
-                    WebSecurityConfigurerAdapter with SecurityFilterChain
-                    pattern
-                  </li>
-                  <li>
-                    <span class="bullet-icon">🔐</span> Configured dual
-                    authentication flows—end-user OAuth2 login and
-                    system-to-system API authentication with centralized JWT
-                    validation
-                  </li>
-                  <li>
-                    <span class="bullet-icon">📚</span> Integrated Springdoc
-                    OpenAPI 3.0 to replace legacy SpringFox, providing
-                    interactive API documentation for better developer
-                    experience
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="portfolio-cta">
-          <a href="#contact" class="btn-primary">
-            <span>Let's Collaborate</span>
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!------------ Contact ------------->
-    <div id="contact">
-      <div class="container">
-        <div class="contact-header">
-          <h1 class="sub-title">Let's Connect</h1>
-          <p class="contact-subtitle">
-            Have a project in mind? Let's build something amazing together!
-          </p>
-        </div>
-
-        <div class="contact-wrapper">
-          <div class="contact-left">
-            <div class="contact-info-card">
-              <div class="info-item">
-                <div class="info-icon">
-                  <i class="fa-solid fa-envelope"></i>
-                </div>
-                <div class="info-details">
-                  <h3>Email</h3>
-                  <a href="mailto:saimahipenumakula@gmail.com"
-                    >saimahipenumakula@gmail.com</a
-                  >
-                </div>
-              </div>
-
-              <div class="info-item">
-                <div class="info-icon">
-                  <i class="fa-solid fa-phone"></i>
-                </div>
-                <div class="info-details">
-                  <h3>Phone</h3>
-                  <a href="tel:334-462-2028">334-462-2028</a>
-                </div>
-              </div>
-
-              <div class="info-item">
-                <div class="info-icon">
-                  <i class="fa-solid fa-location-dot"></i>
-                </div>
-                <div class="info-details">
-                  <h3>Location</h3>
-                  <p>Marietta, Georgia</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="social-connect">
-              <h3>Connect With Me</h3>
-              <div class="social-icons">
-                <a
-                  href="https://www.linkedin.com/in/sai-mahendra-penumakula"
-                  target="_blank"
-                  class="social-icon"
-                >
-                  <i class="fa-brands fa-linkedin"></i>
+            <h1 class="hero-title">
+                <span class="greeting">Hello, I'm</span>
+                <span class="name">Sai Mahendra</span>
+                <span class="role-wrapper">
+                    <span class="role-text">Software Developer</span>
+                </span>
+            </h1>
+            <p class="hero-description">
+                Passionate Java Developer with 5+ years of experience building scalable applications 
+                in telecommunications and healthcare industries. Specializing in Spring Boot, 
+                Microservices, and Cloud Technologies.
+            </p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">
+                    <span>Let's Connect</span>
+                    <i class="fa-solid fa-arrow-right"></i>
                 </a>
-                <a
-                  href="https://github.com/saimahendra1997"
-                  target="_blank"
-                  class="social-icon"
-                >
-                  <i class="fa-brands fa-github"></i>
+                <a href="#projects" class="btn btn-secondary">
+                    <span>View Projects</span>
+                    <i class="fa-solid fa-code"></i>
                 </a>
-                <a
-                  href="https://www.facebook.com/"
-                  target="_blank"
-                  class="social-icon"
-                >
-                  <i class="fa-brands fa-facebook"></i>
-                </a>
-                <a
-                  href="https://www.instagram.com/"
-                  target="_blank"
-                  class="social-icon"
-                >
-                  <i class="fa-brands fa-square-instagram"></i>
-                </a>
-              </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="5">0</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="15">0</span>
+                    <span class="stat-label">Personal & Professional Projects</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="15">0</span>
+                    <span class="stat-label">Technologies</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="code-window">
+                <div class="window-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="file-name">Developer.java</span>
+                </div>
+                <div class="code-content">
+                    <pre><code><span class="keyword">public class</span> <span class="class-name">Developer</span> {
+    <span class="keyword">private</span> String name = <span class="string">"Sai Mahendra"</span>;
+    <span class="keyword">private</span> String[] skills = {
+        <span class="string">"Java"</span>, <span class="string">"Spring Boot"</span>,
+        <span class="string">"Microservices"</span>, <span class="string">"AWS"</span>
+    };
+    
+    <span class="keyword">public</span> String <span class="method">buildSolutions</span>() {
+        <span class="keyword">return</span> <span class="string">"Innovation"</span>;
+    }
+}</code></pre>
+                </div>
+            </div>
+            <div class="floating-icons">
+                <div class="float-icon" style="--delay: 0s; --x: 20%; --y: 10%;"><i class="fa-brands fa-java"></i></div>
+                <div class="float-icon" style="--delay: 1s; --x: 80%; --y: 20%;"><i class="fa-brands fa-aws"></i></div>
+                <div class="float-icon" style="--delay: 2s; --x: 10%; --y: 70%;"><i class="fa-brands fa-angular"></i></div>
+                <div class="float-icon" style="--delay: 3s; --x: 85%; --y: 75%;"><i class="fa-brands fa-react"></i></div>
+                <div class="float-icon" style="--delay: 4s; --x: 50%; --y: 5%;"><i class="fa-solid fa-database"></i></div>
+            </div>
+        </div>
+        <a href="#about" class="scroll-indicator">
+            <span>Scroll Down</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Get To Know</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            
+            <div class="about-intro">
+                <p>
+                  I'm Sai Mahendra Penumakula, a Computer Science graduate from Auburn University at Montgomery. 
+                  With a Bachelor's in Electronics and Communication Engineering from Sathyabama Institute of 
+                  Science and Technology, I've honed my skills in Java development over five years. My expertise 
+                  spans across Java, Spring Boot, Spring Framework, Angular, TypeScript, Microservices, RESTful APIs, 
+                  T-SQL, SQL Server, MongoDB, Unit Tests, API Integration Tests, and AWS. I'm passionate about crafting 
+                  innovative solutions for today's challenges.
+                </p>
             </div>
 
-            <a
-              href="Images/SAI MAHENDRA PENUMAKULA.docx"
-              download
-              class="download-cv"
-            >
-              <i class="fa-solid fa-download"></i>
-              <span>Download Resume</span>
-            </a>
-          </div>
-
-          <div class="contact-right">
-            <div class="contact-form-card">
-              <form name="submit-to-google-sheet">
-                <div class="form-group">
-                  <label for="name">Your Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="Name"
-                    placeholder="John Doe"
-                    required
-                  />
-                </div>
-
-                <div class="form-group">
-                  <label for="email">Your Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="Email"
-                    placeholder="john@example.com"
-                    required
-                  />
-                </div>
-
-                <div class="form-group">
-                  <label for="message">Your Message</label>
-                  <textarea
-                    id="message"
-                    name="Message"
-                    rows="6"
-                    placeholder="Tell me about your project..."
-                    required
-                  ></textarea>
-                </div>
-
-                <button type="submit" class="submit-btn">
-                  <span>Send Message</span>
-                  <i class="fa-solid fa-paper-plane"></i>
+            <!-- Tab Navigation -->
+            <div class="tab-navigation">
+                <button class="tab-btn" data-tab="experience" id="experienceTabBtn">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <span>Experience</span>
                 </button>
-              </form>
-              <span id="msg"></span>
+                <button class="tab-btn" data-tab="education" id="educationTabBtn">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>Education</span>
+                </button>
+                <button class="tab-btn" data-tab="projects" id="projectsTabBtn">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <span>Projects</span>
+                </button>
             </div>
-          </div>
+
+            <!-- Tab Contents -->
+            <div class="tab-contents-wrapper">
+                <!-- Experience Tab -->
+                <div class="tab-content" id="experience-tab">
+                    <div class="about-timeline">
+                        <div class="about-timeline-item">
+                            <div class="about-timeline-icon healthcare">
+                                <i class="fa-solid fa-user-doctor"></i>
+                                <div class="heartbeat-anim">
+                                    <svg viewBox="0 0 100 30">
+                                        <polyline class="heartbeat-line" points="0,15 20,15 25,5 30,25 35,15 45,15 50,8 55,22 60,15 100,15"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="about-timeline-content">
+                                <div class="about-timeline-header">
+                                    <span class="timeline-badge previous">Previously Worked</span>
+                                    <h4>Software Developer</h4>
+                                    <p class="timeline-company">Zyter TruCare</p>
+                                </div>
+                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Denton, TX</p>
+                                <span class="timeline-year">Apr 2024 - Dec 2024</span>
+                            </div>
+                        </div>
+                        <div class="about-timeline-item">
+                            <div class="about-timeline-icon telecom">
+                                <i class="fa-solid fa-tower-cell"></i>
+                                <div class="signal-anim">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="about-timeline-content">
+                                <div class="about-timeline-header">
+                                    <span class="timeline-badge telecom">Telecommunications</span>
+                                    <h4>Software Developer</h4>
+                                    <p class="timeline-company">Singtel Telecommunications Ltd</p>
+                                </div>
+                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Chennai, India</p>
+                                <span class="timeline-year">May 2018 - Oct 2021</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Tab -->
+                <div class="tab-content" id="education-tab">
+                    <div class="about-timeline">
+                        <div class="about-timeline-item">
+                            <div class="about-timeline-icon education">
+                                <i class="fa-solid fa-user-graduate"></i>
+                            </div>
+                            <div class="about-timeline-content">
+                                <h4>Master's in Computer Science</h4>
+                                <p class="timeline-company">Auburn University At Montgomery</p>
+                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Montgomery, AL</p>
+                                <span class="timeline-year">Graduated in 2023</span>
+                            </div>
+                        </div>
+                        <div class="about-timeline-item">
+                            <div class="about-timeline-icon education">
+                                <i class="fa-solid fa-user-graduate"></i>
+                            </div>
+                            <div class="about-timeline-content">
+                                <h4>Bachelor's in ECE</h4>
+                                <p class="timeline-company">Sathyabama Institute of Science and Technology</p>
+                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Chennai, TN - India</p>
+                                <span class="timeline-year">Graduated in 2018</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects Tab - Card similar to Experience/Education timeline -->
+                <div class="tab-content" id="projects-tab">
+                    <div class="about-timeline">
+                        <div class="about-timeline-item projects-timeline-item">
+                            <div class="about-timeline-icon projects">
+                                <i class="fa-solid fa-code-branch"></i>
+                            </div>
+                            <div class="about-timeline-content projects-content">
+                                <h4>Contributed 15+ Projects</h4>
+                                <p class="timeline-company">(Personal & Professional)</p>
+                                <a href="#projects" class="projects-view-link">
+                                    <span>Click here to view</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="copyright">
-        <p>
-          Copyright &copy; 2024 Sai Mahendra Penumakula. Made with
-          <i class="fa-solid fa-heart"></i> by Sai Mahendra
-        </p>
-      </div>
-    </div>
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">My Expertise</span>
+                <h2 class="section-title">Skills & Technologies</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card" data-category="languages">
+                    <div class="skill-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3>Languages</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">TypeScript</span>
+                    </div>
+                    <div class="card-glow"></div>
+                </div>
+
+                <div class="skill-card" data-category="frontend">
+                    <div class="skill-icon">
+                        <i class="fa-solid fa-desktop"></i>
+                    </div>
+                    <h3>Frontend</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Angular</span>
+                        <span class="tag">React</span>
+                        <span class="tag">jQuery</span>
+                        <span class="tag">Bootstrap</span>
+                    </div>
+                    <div class="card-glow"></div>
+                </div>
+
+                <div class="skill-card" data-category="backend">
+                    <div class="skill-icon">
+                        <i class="fa-solid fa-server"></i>
+                    </div>
+                    <h3>Backend</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">Spring</span>
+                        <span class="tag">Hibernate</span>
+                        <span class="tag">Spring Data JPA</span>
+                        <span class="tag">RESTful APIs</span>
+                        <span class="tag">Spring MVC</span>
+                    </div>
+                    <div class="card-glow"></div>
+                </div>
+
+                <div class="skill-card" data-category="database">
+                    <div class="skill-icon">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <h3>Databases</h3>
+                    <div class="skill-tags">
+                        <span class="tag">MySQL</span>
+                        <span class="tag">SQL Server</span>
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">PostgreSQL</span>
+                    </div>
+                    <div class="card-glow"></div>
+                </div>
+
+                <div class="skill-card" data-category="cloud">
+                    <div class="skill-icon">
+                        <i class="fa-brands fa-aws"></i>
+                    </div>
+                    <h3>Cloud & DevOps</h3>
+                    <div class="skill-tags">
+                        <span class="tag">AWS</span>
+                        <span class="tag">Apache Tomcat</span>
+                        <span class="tag">Git</span>
+                        <span class="tag">Maven</span>
+                        <span class="tag">JUnit</span>
+                        <span class="tag">Mockito</span>
+                    </div>
+                    <div class="card-glow"></div>
+                </div>
+
+                <div class="skill-card" data-category="tools">
+                    <div class="skill-icon">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3>Tools & IDEs</h3>
+                    <div class="skill-tags">
+                        <span class="tag">IntelliJ</span>
+                        <span class="tag">VS Code</span>
+                        <span class="tag">Eclipse</span>
+                        <span class="tag">JIRA</span>
+                        <span class="tag">Postman</span>
+                    </div>
+                    <div class="card-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">My Work</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">15+ Personal & Professional Projects</p>
+            </div>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder angular">
+                            <i class="fa-brands fa-angular"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="https://github.com/saimahendra1997/SpringbootAngularCRUDFullStack" target="_blank" class="project-btn">
+                                <i class="fa-brands fa-github"></i>
+                                <span>View Code</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Angular-Staff</h3>
+                        <p>Full-stack CRUD application combining Angular's reactive frontend with Spring Boot's robust backend architecture.</p>
+                        <div class="project-tech">
+                            <span>Angular</span>
+                            <span>Spring Boot</span>
+                            <span>REST API</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder spring">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="https://github.com/saimahendra1997/Mahi-sJobPortal" target="_blank" class="project-btn">
+                                <i class="fa-brands fa-github"></i>
+                                <span>View Code</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Job Portal</h3>
+                        <p>Comprehensive job portal web application featuring advanced search, filtering, and application management capabilities.</p>
+                        <div class="project-tech">
+                            <span>Spring Boot</span>
+                            <span>MySQL</span>
+                            <span>JSP</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder react">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="https://github.com/saimahendra1997/SpringBootReact-EcommerceWebsite" target="_blank" class="project-btn">
+                                <i class="fa-brands fa-github"></i>
+                                <span>View Code</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Spring-React-Shop</h3>
+                        <p>Modern e-commerce platform with seamless shopping experience, built on Spring Boot MVC and React integration.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Spring MVC</span>
+                            <span>JPA</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder microservices">
+                            <i class="fa-solid fa-diagram-project"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="https://github.com/saimahendra1997/SpringBoot-MicroServices" target="_blank" class="project-btn">
+                                <i class="fa-brands fa-github"></i>
+                                <span>View Code</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>QuizForge Microservices</h3>
+                        <p>Scalable distributed system with independently deployable quiz and question services using microservices architecture.</p>
+                        <div class="project-tech">
+                            <span>Microservices</span>
+                            <span>Spring Cloud</span>
+                            <span>Eureka</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- GitHub Portfolio Card -->
+                <article class="project-card github-portfolio-card">
+                    <div class="project-image">
+                        <div class="project-placeholder github">
+                            <i class="fa-brands fa-github"></i>
+                            <div class="continuous-work-badge">
+                                <span class="work-pulse"></span>
+                                <span>Continuously Working</span>
+                            </div>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="https://github.com/saimahendra1997" target="_blank" class="project-btn">
+                                <i class="fa-brands fa-github"></i>
+                                <span>View All Projects</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>GitHub Portfolio</h3>
+                        <p>Explore all my projects, contributions, and continuous learning journey. Always building something new!</p>
+                        <div class="project-tech">
+                            <span>Open Source</span>
+                            <span>Various Tech</span>
+                            <span>Active</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">My Journey</span>
+                <h2 class="section-title">Professional Experience</h2>
+            </div>
+            <div class="experience-grid">
+                <!-- Zyter TruCare Card -->
+                <div class="experience-card">
+                    <div class="exp-card-header">
+                        <div class="company-visual healthcare">
+                            <div class="visual-bg">
+                                <i class="fa-solid fa-user-doctor"></i>
+                                <div class="heartbeat-line">
+                                    <svg viewBox="0 0 100 30">
+                                        <polyline class="heartbeat" points="0,15 20,15 25,5 30,25 35,15 45,15 50,8 55,22 60,15 100,15"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="company-info">
+                            <span class="company-badge previous">Previously Worked</span>
+                            <h3>Zyter TruCare</h3>
+                            <p class="role">Software Developer</p>
+                        </div>
+                    </div>
+                    <div class="exp-card-meta">
+                        <span><i class="fa-solid fa-calendar"></i> Apr 2024 - Dec 2024</span>
+                        <span><i class="fa-solid fa-location-dot"></i> Denton, TX</span>
+                    </div>
+                    <p class="exp-description">
+                        Led technical modernization of a monolithic healthcare application, focusing on security enhancements and Spring Boot upgrades.
+                    </p>
+                    <div class="exp-tech">
+                        <span>Spring Boot 3</span>
+                        <span>Java 17</span>
+                        <span>Angular</span>
+                        <span>OAuth2/JWT</span>
+                        <span>OpenAPI</span>
+                    </div>
+                    <div class="exp-achievements">
+                        <h4><i class="fa-solid fa-trophy"></i> Key Achievements</h4>
+                        <ul>
+                            <li>Built dynamic PDF generation system using Aspose for healthcare correspondence, automating document creation and cutting manual processing by 30%</li>
+                            <li>Migrated critical APIs from GET to POST methods to securely handle 50+ parameters, significantly improving security compliance</li>
+                            <li>Led major application upgrade from Spring Boot 2.7 to 3.5.3—including Spring Framework 6, Java 17, and javax to jakarta migration</li>
+                            <li>Rebuilt authentication system with modern OAuth2 and JWT, replacing deprecated WebSecurityConfigurerAdapter</li>
+                            <li>Integrated Springdoc OpenAPI 3.0 to replace legacy SpringFox for interactive API documentation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Singtel Card -->
+                <div class="experience-card">
+                    <div class="exp-card-header">
+                        <div class="company-visual telecom">
+                            <div class="visual-bg">
+                                <i class="fa-solid fa-tower-cell"></i>
+                                <div class="signal-waves">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="company-info">
+                            <span class="company-badge">Telecommunications</span>
+                            <h3>Singtel Telecommunications Ltd</h3>
+                            <p class="role">Software Developer</p>
+                        </div>
+                    </div>
+                    <div class="exp-card-meta">
+                        <span><i class="fa-solid fa-calendar"></i> May 2018 - Oct 2021</span>
+                        <span><i class="fa-solid fa-location-dot"></i> Chennai, India</span>
+                    </div>
+                    <p class="exp-description">
+                        Modernized a high-traffic billing system handling 10,000+ transactions per second using microservices architecture with Oracle BRM as the central billing engine.
+                    </p>
+                    <div class="exp-tech">
+                        <span>Oracle BRM</span>
+                        <span>Oracle OSB</span>
+                        <span>Spring Boot</span>
+                        <span>React</span>
+                        <span>AWS</span>
+                    </div>
+                    <div class="exp-achievements">
+                        <h4><i class="fa-solid fa-trophy"></i> Key Achievements</h4>
+                        <ul>
+                            <li>Designed REST APIs for Subscription Service with business logic to validate user access and check subscription status against cached plan details</li>
+                            <li>Implemented service-to-service calls through OSB (API Gateway) to query BRM for real-time billing data</li>
+                            <li>Built Invoice & Payments Service managing the complete payment lifecycle—confirming transactions, updating statuses, and triggering invoice generation</li>
+                            <li>Optimized system throughput through data caching, background workers for slow tasks, and AWS auto-scaling</li>
+                            <li>Collaborated with architects on API design and DevOps team to set up CI/CD pipelines with Jenkins and CloudWatch monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="section-title">Let's Connect</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <a href="mailto:saimahipenumakula@gmail.com">saimahipenumakula@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <a href="tel:334-462-2028">334-462-2028</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Marietta, Georgia</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/sai-mahendra-penumakula" target="_blank" class="social-link" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/saimahendra1997" target="_blank" class="social-link" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank" class="social-link" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank" class="social-link" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                    <a href="Images/SAI MAHENDRA PENUMAKULA.docx" download class="btn btn-outline download-btn">
+                        <i class="fa-solid fa-download"></i>
+                        <span>Download Resume</span>
+                    </a>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm" name="submit-to-google-sheet">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="Name" placeholder="John Doe" required>
+                            <span class="input-focus"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="Email" placeholder="john@example.com" required>
+                            <span class="input-focus"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="Message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                            <span class="input-focus"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary submit-btn">
+                            <span>Send Message</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                        <span id="formMessage" class="form-message"></span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">SM</span>
+                    <p>Building digital experiences with passion and precision.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sai Mahendra Penumakula. Made with <i class="fa-solid fa-heart"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
     <script>
-      // Ensure page loads at the top
-      if (window.location.hash) {
-        window.history.replaceState(null, null, window.location.pathname);
-      }
-      window.scrollTo(0, 0);
-    </script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        // Check for saved theme
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        body.setAttribute('data-theme', savedTheme);
 
-    <script>
-      var tablinks = document.getElementsByClassName("tab-links");
-      var tabcontents = document.getElementsByClassName("tab-contents");
-
-      function opentab(tabname) {
-        for (tablink of tablinks) {
-          tablink.classList.remove("active-link");
-        }
-        for (tabcontent of tabcontents) {
-          tabcontent.classList.remove("active-tab");
-        }
-        document.getElementById(tabname).classList.add("active-tab");
-        event.currentTarget.classList.add("active-link");
-      }
-    </script>
-
-    <script>
-      var sidemenu = document.getElementById("sidemenu");
-      function openmenu() {
-        sidemenu.style.right = "0";
-        document.body.style.overflow = "hidden";
-      }
-      function closemenu() {
-        sidemenu.style.right = "-200px";
-        document.body.style.overflow = "auto";
-      }
-      document.addEventListener("DOMContentLoaded", function () {
-        const navLinks = document.querySelectorAll('#sidemenu a[href^="#"]');
-        navLinks.forEach((link) => {
-          link.addEventListener("click", function () {
-            setTimeout(() => {
-              closemenu();
-            }, 300);
-          });
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
         });
 
-        document.addEventListener("click", function (e) {
-          if (
-            sidemenu.style.right === "0px" &&
-            !sidemenu.contains(e.target) &&
-            !e.target.classList.contains("fa-bars")
-          ) {
-            closemenu();
-          }
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            body.classList.toggle('menu-open');
         });
-      });
-    </script>
 
-    <script>
-      const form = document.forms["submit-to-google-sheet"];
-      const msg = document.getElementById("msg");
+        // Close menu on link click
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                navMenu.classList.remove('active');
+                body.classList.remove('menu-open');
+            });
+        });
 
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        fetch("https://formspree.io/f/xldwzrng", {
-          method: "POST",
-          body: new FormData(form),
-          headers: {
-            Accept: "application/json",
-          },
-        })
-          .then((response) => {
-            if (response.ok) {
-              msg.innerHTML = "✓ Message sent successfully!";
-              msg.style.color = "#26cab7";
-              form.reset();
+        // Navbar scroll effect
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
             } else {
-              msg.innerHTML = "✗ Error sending message";
-              msg.style.color = "#ff004f";
+                navbar.classList.remove('scrolled');
             }
-            setTimeout(() => (msg.innerHTML = ""), 5000);
-          })
-          .catch((error) => {
-            msg.innerHTML = "✗ Error sending message";
-            msg.style.color = "#ff004f";
-            setTimeout(() => (msg.innerHTML = ""), 5000);
-          });
-      });
+        });
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Animated counter
+        const animateCounters = () => {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current) + '+';
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target + '+';
+                    }
+                };
+                updateCounter();
+            });
+        };
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                    if (entry.target.classList.contains('hero-stats')) {
+                        animateCounters();
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.skill-card, .project-card, .experience-card, .about-card, .contact-card, .hero-stats, .timeline-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 20 + 10) + 's';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                container.appendChild(particle);
+            }
+        }
+        createParticles();
+
+        // Custom cursor
+        const cursor = document.querySelector('.cursor');
+        const follower = document.querySelector('.cursor-follower');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            setTimeout(() => {
+                follower.style.left = e.clientX + 'px';
+                follower.style.top = e.clientY + 'px';
+            }, 100);
+        });
+
+        document.querySelectorAll('a, button, .skill-card, .project-card').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
+                follower.classList.add('hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+                follower.classList.remove('hover');
+            });
+        });
+
+        // Form submission
+        const form = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            fetch('https://formspree.io/f/xldwzrng', {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(response => {
+                if (response.ok) {
+                    formMessage.textContent = '✓ Message sent successfully!';
+                    formMessage.className = 'form-message success';
+                    form.reset();
+                } else {
+                    formMessage.textContent = '✗ Error sending message';
+                    formMessage.className = 'form-message error';
+                }
+                setTimeout(() => formMessage.textContent = '', 5000);
+            })
+            .catch(() => {
+                formMessage.textContent = '✗ Error sending message';
+                formMessage.className = 'form-message error';
+                setTimeout(() => formMessage.textContent = '', 5000);
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Tab functionality for About Section
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        function switchTab(tabName) {
+            // Remove active class from all buttons and contents
+            tabBtns.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            // Add active class to clicked button and corresponding content
+            const activeBtn = document.querySelector(`[data-tab="${tabName}"]`);
+            const activeContent = document.getElementById(`${tabName}-tab`);
+            
+            if (activeBtn) activeBtn.classList.add('active');
+            if (activeContent) activeContent.classList.add('active');
+        }
+
+        // Add click listeners to tab buttons
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabName = btn.getAttribute('data-tab');
+                switchTab(tabName);
+            });
+        });
+
+        // Set Experience tab as default active on page load
+        switchTab('experience');
+
+        // Ensure page loads at top
+        if (window.location.hash) {
+            window.history.replaceState(null, null, window.location.pathname);
+        }
+        window.scrollTo(0, 0);
     </script>
-
-    <!-- Theme Toggle Script -->
-    <script>
-      const themeToggle = document.getElementById("theme-toggle");
-      const body = document.body;
-
-      // Check for saved theme preference or default to 'dark'
-      const currentTheme = localStorage.getItem("theme") || "dark";
-      body.setAttribute("data-theme", currentTheme);
-
-      themeToggle.addEventListener("click", () => {
-        const theme = body.getAttribute("data-theme");
-        const newTheme = theme === "dark" ? "light" : "dark";
-
-        body.setAttribute("data-theme", newTheme);
-        localStorage.setItem("theme", newTheme);
-      });
-    </script>
-  </body>
+</body>
 </html>
