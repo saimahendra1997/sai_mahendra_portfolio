@@ -2,7 +2,7 @@
    CSS VARIABLES - THEME SYSTEM
    =============================================== */
 
-   :root {
+:root {
     /* Dark Theme (Default) */
     --bg-primary: #000000;
     --bg-secondary: #0a0a0a;
@@ -1282,6 +1282,71 @@ section {
 
 .projects-view-link:hover i {
     transform: translateX(6px);
+}
+
+/* Certifications Tab Styles */
+.about-timeline-icon.certification {
+    background: linear-gradient(135deg, #ff9900 0%, #ff6600 100%);
+    box-shadow: 0 0 20px rgba(255, 153, 0, 0.5);
+}
+
+.about-timeline-icon.certification.aws {
+    background: linear-gradient(135deg, #ff9900 0%, #232f3e 100%);
+}
+
+.about-timeline-icon.certification i {
+    font-size: 20px;
+    color: white;
+}
+
+.timeline-badge.certification {
+    background: rgba(255, 153, 0, 0.1);
+    border-color: rgba(255, 153, 0, 0.3);
+    color: #ff9900;
+}
+
+.certification-content {
+    position: relative;
+}
+
+.certification-content .timeline-location {
+    font-size: 12px;
+    color: var(--text-muted);
+    word-break: break-all;
+}
+
+.certification-content .timeline-location i {
+    color: #ff9900;
+}
+
+.cert-verify-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #ff9900 0%, #ff6600 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all var(--transition-normal);
+    box-shadow: 0 5px 15px rgba(255, 153, 0, 0.3);
+}
+
+.cert-verify-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 153, 0, 0.4);
+}
+
+.cert-verify-link i {
+    font-size: 12px;
+    transition: transform var(--transition-normal);
+}
+
+.cert-verify-link:hover i {
+    transform: translate(3px, -3px);
 }
 
 /* Old about-content styles kept for reference */
