@@ -1294,6 +1294,11 @@ section {
     background: linear-gradient(135deg, #ff9900 0%, #232f3e 100%);
 }
 
+.about-timeline-icon.certification.docker {
+    background: linear-gradient(135deg, #2496ed 0%, #1d63ed 100%);
+    box-shadow: 0 0 20px rgba(36, 150, 237, 0.5);
+}
+
 .about-timeline-icon.certification i {
     font-size: 20px;
     color: white;
