@@ -285,8 +285,9 @@ CSS VARIABLES - THEME SYSTEM
   
   .nav-link:hover,
   .nav-link.active {
-    color: var(--text-primary);
-    background: var(--bg-tertiary);
+  color: #fff;
+  background: rgba(99, 102, 241, 0.18); /* blue tint */
+  border: 1px solid rgba(99, 102, 241, 0.35);
   }
   
   .nav-link.active::after {
@@ -297,7 +298,7 @@ CSS VARIABLES - THEME SYSTEM
     transform: translateX(-50%);
     width: 5px;
     height: 5px;
-    background: var(--accent-primary);
+    background: var(--accent-secondary);
     border-radius: 50%;
   }
   
