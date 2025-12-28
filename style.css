@@ -283,12 +283,11 @@ CSS VARIABLES - THEME SYSTEM
     position: relative;
   }
   
-  .nav-link:hover,
-  .nav-link.active {
-  color: #fff;
-  background: rgba(99, 102, 241, 0.18); /* blue tint */
-  border: 1px solid rgba(99, 102, 241, 0.35);
-  }
+    .nav-link:hover,
+    .nav-link.active {
+        color: var(--text-primary);
+        background: var(--bg-tertiary);
+    }
   
   .nav-link.active::after {
     content: '';
@@ -298,7 +297,7 @@ CSS VARIABLES - THEME SYSTEM
     transform: translateX(-50%);
     width: 5px;
     height: 5px;
-    background: var(--accent-secondary);
+    background: var(--accent-primary);
     border-radius: 50%;
   }
   
