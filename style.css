@@ -283,13 +283,22 @@ CSS VARIABLES - THEME SYSTEM
     position: relative;
   }
   
-    .nav-link:hover,
-    .nav-link.active {
-        color: var(--text-primary);
-        background: var(--bg-tertiary);
-    }
+  .nav-link:hover,
+  .nav-link.active {
+    color: #fff;
+    background: rgba(99, 102, 241, 0.18);
+    border: 1px solid rgba(99, 102, 241, 0.35);
+  }
   
-  .nav-link.active::after {
+  /* Light mode override for nav hover/active */
+  [data-theme="light"] .nav-link:hover,
+  [data-theme="light"] .nav-link.active {
+    color: var(--text-primary);                /* dark text */
+    background: rgba(79, 70, 229, 0.10);       /* lighter blue tint */
+    border: 1px solid rgba(79, 70, 229, 0.22); /* softer border */
+  }
+
+  [data-theme="light"] .nav-link.active::after {
     content: '';
     position: absolute;
     bottom: 5px;
