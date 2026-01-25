@@ -274,15 +274,19 @@ a {
 
 .main-header {
   position: fixed;
-  inset: 0 auto auto 0;
+  top: 0;
+  left: 0;
+  right: 0;
   padding: 16px 24px;
   z-index: 40;
   pointer-events: none;
+  display: flex;
+  justify-content: center;
 }
 
 .glass-nav {
+  width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
   padding: 10px 20px;
   border-radius: 999px;
   background:
@@ -524,6 +528,29 @@ a {
 .mobile-sidebar.active ~ .mobile-sidebar-overlay {
   opacity: 1;
   pointer-events: auto;
+}
+
+.mobile-sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 32px;
+  padding: 0 8px;
+}
+
+.mobile-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.mobile-logo .logo-glass {
+  width: 36px;
+  height: 36px;
+  font-size: 12px;
 }
 
 .mobile-nav-list {
@@ -1406,13 +1433,6 @@ section {
   height: 52px;
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.16);
-  background:
-    radial-gradient(
-      circle at 20% 0,
-      rgba(255, 255, 255, 0.35),
-      transparent 60%
-    ),
-    rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1423,7 +1443,81 @@ section {
 
 .skill-icon i {
   font-size: 22px;
-  color: #000;
+  font-weight: 600;
+}
+
+/* Languages - Yellow (keyword) */
+.skill-card[data-category="languages"] .skill-icon {
+  background: radial-gradient(
+    circle at 20% 0,
+    #facc15,
+    rgba(250, 204, 21, 0.4)
+  );
+}
+
+.skill-card[data-category="languages"] .skill-icon i {
+  color: #fef3c7;
+}
+
+/* Frontend - Blue (method) */
+.skill-card[data-category="frontend"] .skill-icon {
+  background: radial-gradient(
+    circle at 20% 0,
+    #38bdf8,
+    rgba(56, 189, 248, 0.4)
+  );
+}
+
+.skill-card[data-category="frontend"] .skill-icon i {
+  color: #cffafe;
+}
+
+/* Backend - Orange (class) */
+.skill-card[data-category="backend"] .skill-icon {
+  background: radial-gradient(
+    circle at 20% 0,
+    #f97316,
+    rgba(249, 115, 22, 0.4)
+  );
+}
+
+.skill-card[data-category="backend"] .skill-icon i {
+  color: #ffedd5;
+}
+
+/* Database - Green (string) */
+.skill-card[data-category="database"] .skill-icon {
+  background: radial-gradient(
+    circle at 20% 0,
+    #4ade80,
+    rgba(74, 222, 128, 0.4)
+  );
+}
+
+.skill-card[data-category="database"] .skill-icon i {
+  color: #dcfce7;
+}
+
+/* Cloud - Sky Blue */
+.skill-card[data-category="cloud"] .skill-icon {
+  background: radial-gradient(circle at 20% 0, #06b6d4, rgba(6, 182, 212, 0.4));
+}
+
+.skill-card[data-category="cloud"] .skill-icon i {
+  color: #cffafe;
+}
+
+/* Tools - Purple */
+.skill-card[data-category="tools"] .skill-icon {
+  background: radial-gradient(
+    circle at 20% 0,
+    #a78bfa,
+    rgba(167, 139, 250, 0.4)
+  );
+}
+
+.skill-card[data-category="tools"] .skill-icon i {
+  color: #f3e8ff;
 }
 
 .icon-glow {
@@ -1950,16 +2044,43 @@ section {
   width: 46px;
   height: 46px;
   border-radius: 16px;
-  background: var(--gradient-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #000;
   flex-shrink: 0;
+  font-size: 17px;
+  font-weight: 600;
+  color: white;
 }
 
-.info-icon i {
-  font-size: 17px;
+/* Email - Orange */
+.info-card:nth-child(1) .info-icon {
+  background: radial-gradient(
+    circle at 20% 0,
+    #f97316,
+    rgba(249, 115, 22, 0.4)
+  );
+  color: #ffedd5;
+}
+
+/* Phone - Green */
+.info-card:nth-child(2) .info-icon {
+  background: radial-gradient(
+    circle at 20% 0,
+    #4ade80,
+    rgba(74, 222, 128, 0.4)
+  );
+  color: #dcfce7;
+}
+
+/* Location - Blue */
+.info-card:nth-child(3) .info-icon {
+  background: radial-gradient(
+    circle at 20% 0,
+    #38bdf8,
+    rgba(56, 189, 248, 0.4)
+  );
+  color: #cffafe;
 }
 
 .info-content h3 {
@@ -1994,18 +2115,80 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-secondary);
   transition: all var(--duration-normal) var(--ease-liquid);
-  border: none;
-  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(0, 0, 0, 0.4);
   cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
 }
 
-.social-btn:hover {
-  background: var(--gradient-primary);
+/* LinkedIn - Blue */
+.social-btn:nth-child(1) {
+  color: #0a66c2;
+  border-color: rgba(10, 102, 194, 0.3);
+}
+
+.social-btn:nth-child(1):hover {
+  background: radial-gradient(
+    circle at 20% 0,
+    #0a66c2,
+    rgba(10, 102, 194, 0.4)
+  );
+  color: #e0f2fe;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(10, 102, 194, 0.5);
+}
+
+/* GitHub - Gray */
+.social-btn:nth-child(2) {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.social-btn:nth-child(2):hover {
+  background: radial-gradient(
+    circle at 20% 0,
+    #ffffff,
+    rgba(255, 255, 255, 0.4)
+  );
   color: #000;
   transform: translateY(-3px);
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 14px 36px rgba(255, 255, 255, 0.3);
+}
+
+/* Facebook - Blue */
+.social-btn:nth-child(3) {
+  color: #1877f2;
+  border-color: rgba(24, 119, 242, 0.3);
+}
+
+.social-btn:nth-child(3):hover {
+  background: radial-gradient(
+    circle at 20% 0,
+    #1877f2,
+    rgba(24, 119, 242, 0.4)
+  );
+  color: #dbeafe;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(24, 119, 242, 0.5);
+}
+
+/* Instagram - Pink */
+.social-btn:nth-child(4) {
+  color: #e1306c;
+  border-color: rgba(225, 48, 108, 0.3);
+}
+
+.social-btn:nth-child(4):hover {
+  background: radial-gradient(
+    circle at 20% 0,
+    #e1306c,
+    rgba(225, 48, 108, 0.4)
+  );
+  color: #fce7f3;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(225, 48, 108, 0.5);
 }
 
 .download-btn {
@@ -2358,18 +2541,55 @@ section {
   }
   .glass-nav {
     padding: 8px 12px;
+    border-radius: 24px;
+  }
+  .nav-container {
+    gap: 8px;
+  }
+  .logo {
+    gap: 6px;
+  }
+  .logo-glass {
+    width: 36px;
+    height: 36px;
+    font-size: 12px;
+  }
+  .logo-name {
+    font-size: 13px;
+    display: none;
   }
   .hero-section {
-    padding-inline: 16px;
+    padding: 100px 16px 60px;
   }
   .status-pill {
     padding: 6px 14px;
+    font-size: 10px;
+  }
+  .hero-title {
+    margin-bottom: 16px;
   }
   .name-highlight {
-    font-size: 30px;
+    font-size: 32px;
+  }
+  .role-badge {
+    padding: 7px 14px;
+    font-size: 12px;
   }
   .hero-description {
     font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .btn-liquid-primary,
+  .btn-liquid-secondary {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+    font-size: 12px;
   }
   .code-card {
     display: none;
@@ -2377,20 +2597,224 @@ section {
   .hero-visual {
     display: none;
   }
+  .hero-metrics {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+  .metric-card {
+    width: 100%;
+    min-width: unset;
+    padding: 14px 16px;
+  }
+  .scroll-prompt {
+    bottom: 20px;
+  }
+  .about-layout {
+    gap: 24px;
+  }
+  .about-image-container {
+    max-width: 100%;
+  }
+  .about-intro {
+    padding: 16px;
+  }
+  .about-intro p {
+    font-size: 14px;
+  }
+  .tab-btn {
+    padding: 9px 8px;
+    font-size: 11px;
+  }
+  .tab-btn i {
+    font-size: 12px;
+  }
+  .tab-btn span {
+    display: none;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .skill-card {
+    padding: 18px;
+  }
+  .skill-icon {
+    width: 44px;
+    height: 44px;
+  }
+  .skill-icon i {
+    font-size: 18px;
+  }
+  .skill-card h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .skill-tags {
+    gap: 6px;
+  }
+  .skill-tag {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .project-card {
+    overflow: visible;
+  }
+  .project-visual {
+    height: 140px;
+  }
+  .project-visual i {
+    font-size: 40px;
+  }
+  .project-content {
+    padding: 16px;
+  }
+  .project-content h3 {
+    font-size: 15px;
+  }
+  .project-content p {
+    font-size: 12px;
+  }
   .experience-cards {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .exp-card {
+    padding: 18px;
+  }
+  .exp-header {
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .company-icon {
+    width: 60px;
+    height: 60px;
+  }
+  .company-icon i {
+    font-size: 24px;
+  }
+  .company-info h3 {
+    font-size: 16px;
+  }
+  .company-info .role {
+    font-size: 12px;
+  }
+  .exp-meta {
+    gap: 12px;
+    font-size: 10px;
+    padding-bottom: 10px;
+  }
+  .exp-summary {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+  .exp-tech {
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+  .exp-tech span {
+    padding: 5px 9px;
+    font-size: 10px;
+  }
+  .contact-layout {
+    gap: 24px;
+  }
+  .contact-info {
+    gap: 12px;
+  }
+  .info-card {
+    padding: 12px 14px;
+    gap: 12px;
+  }
+  .info-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 15px;
+  }
+  .info-content h3 {
+    font-size: 10px;
+  }
+  .info-content a,
+  .info-content p {
+    font-size: 12px;
+  }
+  .social-row {
+    gap: 8px;
+  }
+  .social-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+  }
+  .download-btn {
+    padding: 12px 14px;
+    font-size: 12px;
+    gap: 8px;
   }
   .contact-form {
-    padding: 22px;
+    padding: 18px;
+    gap: 16px;
+  }
+  .form-group label {
+    font-size: 11px;
+  }
+  .form-group input,
+  .form-group textarea {
+    padding: 11px 14px;
+    font-size: 13px;
+  }
+  .submit-btn {
+    padding: 13px 14px;
+    font-size: 12px;
+    gap: 8px;
+  }
+  .footer-content {
+    gap: 16px;
+  }
+  .footer-brand {
+    gap: 10px;
+  }
+  .footer-brand .logo-glass {
+    width: 36px;
+    height: 36px;
+  }
+  .footer-brand p {
+    font-size: 12px;
+  }
+  .footer-links {
+    gap: 12px;
+  }
+  .footer-links a {
+    font-size: 12px;
   }
   .back-to-top {
-    right: 20px;
-    bottom: 20px;
-    width: 42px;
-    height: 42px;
+    right: 16px;
+    bottom: 16px;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
   }
   .mobile-sidebar {
-    width: 60%;
+    width: 70%;
+    padding: 80px 18px 40px;
+  }
+  .mobile-sidebar-header {
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .mobile-logo {
+    font-size: 12px;
+  }
+  .mobile-nav-list {
+    gap: 6px;
+  }
+  .mobile-nav-link {
+    padding: 12px 16px;
+    font-size: 14px;
   }
 }
 
