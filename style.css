@@ -648,6 +648,7 @@ section {
   align-items: center;
 }
 
+/* ── STATUS PILL ─────────────────────────────────── */
 .status-pill {
   display: inline-flex;
   align-items: center;
@@ -656,6 +657,7 @@ section {
   margin-bottom: 20px;
 }
 
+/* Original green dot (kept for reference, overridden below) */
 .status-dot {
   width: 8px;
   height: 8px;
@@ -665,12 +667,23 @@ section {
   animation: pulse 2s ease-in-out infinite;
 }
 
+/* Training amber dot */
+.status-dot.training {
+  background: #f59e0b;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.85);
+}
+
 .status-text {
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.06em;
   color: #22c55e;
   text-transform: uppercase;
+}
+
+/* Training amber text */
+.status-text.training-text {
+  color: #f59e0b;
 }
 
 @keyframes pulse {
@@ -1216,12 +1229,26 @@ section {
   background: radial-gradient(circle at 25% 0, #bae6fd, #0284c7);
 }
 
+/* ValueMomentum marker — amber/gold */
+.timeline-marker.valuemomentum {
+  background: radial-gradient(circle at 25% 0, #fde68a, #f59e0b);
+}
+
+.timeline-marker.valuemomentum i {
+  color: #451a03;
+}
+
 .pulse-ring {
   position: absolute;
   inset: -4px;
   border-radius: 999px;
   border: 1px solid rgba(34, 197, 94, 0.4);
   animation: pulseRing 2.2s ease-out infinite;
+}
+
+/* ValueMomentum ring — amber */
+.pulse-ring.vm-ring {
+  border-color: rgba(245, 158, 11, 0.5);
 }
 
 @keyframes pulseRing {
@@ -1302,6 +1329,13 @@ section {
 .timeline-badge.cert {
   color: #fbbf24;
   border-color: rgba(250, 191, 36, 0.6);
+}
+
+/* ValueMomentum badge — amber */
+.timeline-badge.vm-badge {
+  color: #fde68a;
+  border-color: rgba(245, 158, 11, 0.6);
+  background: rgba(245, 158, 11, 0.1);
 }
 
 .timeline-card h4 {
@@ -1446,7 +1480,6 @@ section {
   font-weight: 600;
 }
 
-/* Languages - Yellow (keyword) */
 .skill-card[data-category="languages"] .skill-icon {
   background: radial-gradient(
     circle at 20% 0,
@@ -1459,7 +1492,6 @@ section {
   color: #fef3c7;
 }
 
-/* Frontend - Blue (method) */
 .skill-card[data-category="frontend"] .skill-icon {
   background: radial-gradient(
     circle at 20% 0,
@@ -1472,7 +1504,6 @@ section {
   color: #cffafe;
 }
 
-/* Backend - Orange (class) */
 .skill-card[data-category="backend"] .skill-icon {
   background: radial-gradient(
     circle at 20% 0,
@@ -1485,7 +1516,6 @@ section {
   color: #ffedd5;
 }
 
-/* Database - Green (string) */
 .skill-card[data-category="database"] .skill-icon {
   background: radial-gradient(
     circle at 20% 0,
@@ -1498,7 +1528,6 @@ section {
   color: #dcfce7;
 }
 
-/* Cloud - Sky Blue */
 .skill-card[data-category="cloud"] .skill-icon {
   background: radial-gradient(circle at 20% 0, #06b6d4, rgba(6, 182, 212, 0.4));
 }
@@ -1507,7 +1536,6 @@ section {
   color: #cffafe;
 }
 
-/* Tools - Purple */
 .skill-card[data-category="tools"] .skill-icon {
   background: radial-gradient(
     circle at 20% 0,
@@ -1664,7 +1692,134 @@ section {
   position: relative;
 }
 
-/* Spring Learning Icon Container */
+/* ── GUIDEWIRE COMING SOON CARD ─────────────────── */
+.project-visual.guidewire-visual {
+  background: radial-gradient(circle at top, #fef3c7, #b45309);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Scan line animation */
+.gw-scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.7), transparent);
+  top: 0;
+  animation: gwScan 3s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes gwScan {
+  0% { top: 0%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.gw-icon-wrap {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.gw-icon-wrap i {
+  font-size: 38px;
+  color: #1c0a00;
+  position: relative;
+  z-index: 2;
+}
+
+.gw-orbit-ring {
+  position: absolute;
+  inset: 0;
+  border: 2px dashed rgba(28, 10, 0, 0.35);
+  border-radius: 50%;
+  animation: gwOrbit 6s linear infinite;
+}
+
+.gw-orbit-ring-2 {
+  inset: -14px;
+  border-color: rgba(28, 10, 0, 0.18);
+  animation-duration: 10s;
+  animation-direction: reverse;
+}
+
+@keyframes gwOrbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.coming-soon-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(28, 10, 0, 0.18);
+  border: 1px solid rgba(28, 10, 0, 0.4);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #1c0a00;
+  z-index: 3;
+}
+
+.cs-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #b45309;
+  box-shadow: 0 0 10px rgba(180, 83, 9, 0.9);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* Coming-soon non-clickable link row */
+.coming-soon-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: rgba(245, 158, 11, 0.08);
+  color: #fbbf24;
+  cursor: default;
+  pointer-events: none;
+}
+
+.gw-hourglass {
+  animation: hourglassSpin 2.5s ease-in-out infinite;
+}
+
+@keyframes hourglassSpin {
+  0%, 100% { transform: rotate(0deg); }
+  48%       { transform: rotate(0deg); }
+  52%       { transform: rotate(180deg); }
+}
+
+/* Guidewire card tags */
+.guidewire-card .project-tags span {
+  border-color: rgba(245, 158, 11, 0.4);
+  color: #fde68a;
+  background: rgba(245, 158, 11, 0.1);
+}
+
+/* Spring Learning */
 .spring-learning-icon {
   position: relative;
   width: 80px;
@@ -1681,7 +1836,6 @@ section {
   position: relative;
 }
 
-/* Orbital Animation Ring */
 .spring-orbit {
   position: absolute;
   inset: 0;
@@ -1704,15 +1858,10 @@ section {
 }
 
 @keyframes orbitSpin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-/* In Progress Learning Indicator */
 .learning-indicator {
   position: absolute;
   top: 16px;
@@ -1740,7 +1889,6 @@ section {
   animation: pulse 1.8s ease-in-out infinite;
 }
 
-/* Progress Bar */
 .progress-bar-container {
   position: absolute;
   bottom: 0;
@@ -1759,15 +1907,10 @@ section {
 }
 
 @keyframes progressPulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.7;
-  }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
 }
 
-/* Learning Card Tag Styling */
 .learning-card .project-tags span {
   border-color: rgba(22, 163, 74, 0.5);
   color: #86efac;
@@ -1897,6 +2040,7 @@ section {
   pointer-events: none;
 }
 
+/* ── EXPERIENCE CARDS ────────────────────────────── */
 .experience-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
@@ -1948,6 +2092,33 @@ section {
   background: radial-gradient(circle at 10% 0, #e5e5e5, #404040);
 }
 
+/* ValueMomentum company icon — amber/gold */
+.company-icon.valuemomentum-icon {
+  background: radial-gradient(circle at 10% 0, #fde68a, #b45309);
+}
+
+.company-icon.valuemomentum-icon i {
+  color: #1c0a00;
+}
+
+/* VM pulse animation */
+.vm-pulse-anim {
+  position: absolute;
+  inset: 0;
+}
+
+.vm-pulse-anim span {
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  animation: signalPulse 2.4s ease-out infinite;
+}
+
+.vm-pulse-anim span:nth-child(2) {
+  animation-delay: 0.7s;
+}
+
 .company-icon i {
   position: relative;
   z-index: 1;
@@ -1972,12 +2143,8 @@ section {
 }
 
 @keyframes heartbeatDraw {
-  0% {
-    stroke-dashoffset: 140;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
+  0% { stroke-dashoffset: 140; }
+  100% { stroke-dashoffset: 0; }
 }
 
 .signal-anim {
@@ -2002,14 +2169,8 @@ section {
 }
 
 @keyframes signalPulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.9;
-  }
-  100% {
-    transform: scale(1.25);
-    opacity: 0;
-  }
+  0% { transform: scale(1); opacity: 0.9; }
+  100% { transform: scale(1.25); opacity: 0; }
 }
 
 .company-info h3 {
@@ -2041,6 +2202,13 @@ section {
   background: rgba(255, 255, 255, 0.04);
   border-color: rgba(255, 255, 255, 0.5);
   color: var(--accent-5);
+}
+
+/* ValueMomentum exp badge — amber */
+.exp-badge.vm-exp-badge {
+  background: rgba(245, 158, 11, 0.14);
+  border-color: rgba(245, 158, 11, 0.6);
+  color: #fde68a;
 }
 
 .exp-meta {
@@ -2100,6 +2268,11 @@ section {
   color: #facc15;
 }
 
+/* ValueMomentum "current focus" icon color */
+.exp-achievements h4 .fa-rotate {
+  color: #f59e0b;
+}
+
 .exp-achievements ul {
   list-style: none;
 }
@@ -2134,6 +2307,7 @@ section {
   opacity: 1;
 }
 
+/* ── CONTACT ─────────────────────────────────────── */
 .contact-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
@@ -2179,7 +2353,6 @@ section {
   color: white;
 }
 
-/* Email - Orange */
 .info-card:nth-child(1) .info-icon {
   background: radial-gradient(
     circle at 20% 0,
@@ -2189,7 +2362,6 @@ section {
   color: #ffedd5;
 }
 
-/* Phone - Green */
 .info-card:nth-child(2) .info-icon {
   background: radial-gradient(
     circle at 20% 0,
@@ -2199,7 +2371,6 @@ section {
   color: #dcfce7;
 }
 
-/* Location - Blue */
 .info-card:nth-child(3) .info-icon {
   background: radial-gradient(
     circle at 20% 0,
@@ -2249,7 +2420,6 @@ section {
   font-weight: 600;
 }
 
-/* LinkedIn - Blue */
 .social-btn:nth-child(1) {
   color: #0a66c2;
   border-color: rgba(10, 102, 194, 0.3);
@@ -2266,7 +2436,6 @@ section {
   box-shadow: 0 14px 36px rgba(10, 102, 194, 0.5);
 }
 
-/* GitHub - Gray */
 .social-btn:nth-child(2) {
   color: #ffffff;
   border-color: rgba(255, 255, 255, 0.3);
@@ -2283,7 +2452,6 @@ section {
   box-shadow: 0 14px 36px rgba(255, 255, 255, 0.3);
 }
 
-/* Facebook - Blue */
 .social-btn:nth-child(3) {
   color: #1877f2;
   border-color: rgba(24, 119, 242, 0.3);
@@ -2300,7 +2468,6 @@ section {
   box-shadow: 0 14px 36px rgba(24, 119, 242, 0.5);
 }
 
-/* Instagram - Pink */
 .social-btn:nth-child(4) {
   color: #e1306c;
   border-color: rgba(225, 48, 108, 0.3);
@@ -2527,13 +2694,8 @@ section {
 }
 
 @keyframes heartBeat {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  40% {
-    transform: scale(1.18);
-  }
+  0%, 100% { transform: scale(1); }
+  40% { transform: scale(1.18); }
 }
 
 .back-to-top {
@@ -2571,383 +2733,126 @@ section {
 }
 
 @keyframes fadeSlideUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
+/* ── RESPONSIVE ──────────────────────────────────── */
 @media (max-width: 1024px) {
   .hero-container {
     grid-template-columns: 1fr;
     gap: 54px;
     text-align: center;
   }
-  .hero-content {
-    order: 2;
-  }
-  .hero-visual {
-    order: 1;
-    max-width: 520px;
-    margin: 0 auto;
-  }
-  .hero-description {
-    margin-inline: auto;
-  }
-  .hero-actions {
-    justify-content: center;
-  }
-  .hero-metrics {
-    justify-content: center;
-  }
-  .about-layout {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .about-image-container {
-    max-width: 320px;
-    margin: 0 auto;
-  }
-  .experience-cards {
-    grid-template-columns: 1fr;
-  }
-  .contact-layout {
-    grid-template-columns: 1fr;
-  }
-  .contact-info {
-    order: 2;
-  }
+  .hero-content { order: 2; }
+  .hero-visual { order: 1; max-width: 520px; margin: 0 auto; }
+  .hero-description { margin-inline: auto; }
+  .hero-actions { justify-content: center; }
+  .hero-metrics { justify-content: center; }
+  .about-layout { grid-template-columns: 1fr; gap: 40px; }
+  .about-image-container { max-width: 320px; margin: 0 auto; }
+  .experience-cards { grid-template-columns: 1fr; }
+  .contact-layout { grid-template-columns: 1fr; }
+  .contact-info { order: 2; }
 }
 
 @media (max-width: 768px) {
-  .nav-pill {
-    display: none;
-  }
-  .mobile-menu-btn {
-    display: flex;
-  }
-  .hero-section {
-    padding-top: 120px;
-  }
-  .hero-metrics {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .experience-cards {
-    grid-template-columns: 1fr;
-  }
-  .scroll-prompt {
-    display: none;
-  }
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  .footer-brand {
-    justify-content: center;
-  }
-  .footer-links {
-    justify-content: center;
-  }
-  .mobile-sidebar {
-    width: 50%;
-  }
+  .nav-pill { display: none; }
+  .mobile-menu-btn { display: flex; }
+  .hero-section { padding-top: 120px; }
+  .hero-metrics { flex-direction: column; align-items: stretch; }
+  .experience-cards { grid-template-columns: 1fr; }
+  .scroll-prompt { display: none; }
+  .footer-content { flex-direction: column; text-align: center; }
+  .footer-brand { justify-content: center; }
+  .footer-links { justify-content: center; }
+  .mobile-sidebar { width: 50%; }
 }
 
 @media (max-width: 480px) {
-  section {
-    padding: 80px 0;
-  }
-  .container {
-    padding: 0 16px;
-  }
-  .glass-nav {
-    padding: 8px 12px;
-    border-radius: 24px;
-  }
-  .nav-container {
-    gap: 8px;
-  }
-  .logo {
-    gap: 6px;
-  }
-  .logo-glass {
-    width: 36px;
-    height: 36px;
-    font-size: 12px;
-  }
-  .logo-name {
-    font-size: 13px;
-    display: none;
-  }
-  .hero-section {
-    padding: 100px 16px 60px;
-  }
-  .status-pill {
-    padding: 6px 14px;
-    font-size: 10px;
-  }
-  .hero-title {
-    margin-bottom: 16px;
-  }
-  .name-highlight {
-    font-size: 32px;
-  }
-  .role-badge {
-    padding: 7px 14px;
-    font-size: 12px;
-  }
-  .hero-description {
-    font-size: 14px;
-    margin-bottom: 20px;
-  }
-  .hero-actions {
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 24px;
-  }
-  .btn-liquid-primary,
-  .btn-liquid-secondary {
-    width: 100%;
-    justify-content: center;
-    padding: 12px 20px;
-    font-size: 12px;
-  }
-  .code-card {
-    display: none;
-  }
-  .hero-visual {
-    display: none;
-  }
-  .hero-metrics {
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
-  }
-  .metric-card {
-    width: 100%;
-    min-width: unset;
-    padding: 14px 16px;
-  }
-  .scroll-prompt {
-    bottom: 20px;
-  }
-  .about-layout {
-    gap: 24px;
-  }
-  .about-image-container {
-    max-width: 100%;
-  }
-  .about-intro {
-    padding: 16px;
-  }
-  .about-intro p {
-    font-size: 14px;
-  }
-  .tab-btn {
-    padding: 9px 8px;
-    font-size: 11px;
-  }
-  .tab-btn i {
-    font-size: 12px;
-  }
-  .tab-btn span {
-    display: none;
-  }
-  .skills-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .skill-card {
-    padding: 18px;
-  }
-  .skill-icon {
-    width: 44px;
-    height: 44px;
-  }
-  .skill-icon i {
-    font-size: 18px;
-  }
-  .skill-card h3 {
-    font-size: 15px;
-    margin-bottom: 10px;
-  }
-  .skill-tags {
-    gap: 6px;
-  }
-  .skill-tag {
-    padding: 5px 10px;
-    font-size: 11px;
-  }
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .project-card {
-    overflow: visible;
-  }
-  .project-visual {
-    height: 140px;
-  }
-  .project-visual i {
-    font-size: 40px;
-  }
-  .project-content {
-    padding: 16px;
-  }
-  .project-content h3 {
-    font-size: 15px;
-  }
-  .project-content p {
-    font-size: 12px;
-  }
-  .experience-cards {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .exp-card {
-    padding: 18px;
-  }
-  .exp-header {
-    gap: 12px;
-    margin-bottom: 14px;
-  }
-  .company-icon {
-    width: 60px;
-    height: 60px;
-  }
-  .company-icon i {
-    font-size: 24px;
-  }
-  .company-info h3 {
-    font-size: 16px;
-  }
-  .company-info .role {
-    font-size: 12px;
-  }
-  .exp-meta {
-    gap: 12px;
-    font-size: 10px;
-    padding-bottom: 10px;
-  }
-  .exp-summary {
-    font-size: 12px;
-    margin-bottom: 12px;
-  }
-  .exp-tech {
-    gap: 6px;
-    margin-bottom: 12px;
-  }
-  .exp-tech span {
-    padding: 5px 9px;
-    font-size: 10px;
-  }
-  .contact-layout {
-    gap: 24px;
-  }
-  .contact-info {
-    gap: 12px;
-  }
-  .info-card {
-    padding: 12px 14px;
-    gap: 12px;
-  }
-  .info-icon {
-    width: 40px;
-    height: 40px;
-    font-size: 15px;
-  }
-  .info-content h3 {
-    font-size: 10px;
-  }
-  .info-content a,
-  .info-content p {
-    font-size: 12px;
-  }
-  .social-row {
-    gap: 8px;
-  }
-  .social-btn {
-    width: 38px;
-    height: 38px;
-    font-size: 14px;
-  }
-  .download-btn {
-    padding: 12px 14px;
-    font-size: 12px;
-    gap: 8px;
-  }
-  .contact-form {
-    padding: 18px;
-    gap: 16px;
-  }
-  .form-group label {
-    font-size: 11px;
-  }
-  .form-group input,
-  .form-group textarea {
-    padding: 11px 14px;
-    font-size: 13px;
-  }
-  .submit-btn {
-    padding: 13px 14px;
-    font-size: 12px;
-    gap: 8px;
-  }
-  .footer-content {
-    gap: 16px;
-  }
-  .footer-brand {
-    gap: 10px;
-  }
-  .footer-brand .logo-glass {
-    width: 36px;
-    height: 36px;
-  }
-  .footer-brand p {
-    font-size: 12px;
-  }
-  .footer-links {
-    gap: 12px;
-  }
-  .footer-links a {
-    font-size: 12px;
-  }
-  .back-to-top {
-    right: 16px;
-    bottom: 16px;
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-  }
-  .mobile-sidebar {
-    width: 70%;
-    padding: 80px 18px 40px;
-  }
-  .mobile-sidebar-header {
-    gap: 8px;
-    margin-bottom: 24px;
-  }
-  .mobile-logo {
-    font-size: 12px;
-  }
-  .mobile-nav-list {
-    gap: 6px;
-  }
-  .mobile-nav-link {
-    padding: 12px 16px;
-    font-size: 14px;
-  }
+  section { padding: 80px 0; }
+  .container { padding: 0 16px; }
+  .glass-nav { padding: 8px 12px; border-radius: 24px; }
+  .nav-container { gap: 8px; }
+  .logo { gap: 6px; }
+  .logo-glass { width: 36px; height: 36px; font-size: 12px; }
+  .logo-name { font-size: 13px; display: none; }
+  .hero-section { padding: 100px 16px 60px; }
+  .status-pill { padding: 6px 14px; font-size: 10px; }
+  .hero-title { margin-bottom: 16px; }
+  .name-highlight { font-size: 32px; }
+  .role-badge { padding: 7px 14px; font-size: 12px; }
+  .hero-description { font-size: 14px; margin-bottom: 20px; }
+  .hero-actions { flex-direction: column; gap: 12px; margin-bottom: 24px; }
+  .btn-liquid-primary, .btn-liquid-secondary {
+    width: 100%; justify-content: center; padding: 12px 20px; font-size: 12px;
+  }
+  .code-card { display: none; }
+  .hero-visual { display: none; }
+  .hero-metrics { flex-direction: column; gap: 12px; width: 100%; }
+  .metric-card { width: 100%; min-width: unset; padding: 14px 16px; }
+  .scroll-prompt { bottom: 20px; }
+  .about-layout { gap: 24px; }
+  .about-image-container { max-width: 100%; }
+  .about-intro { padding: 16px; }
+  .about-intro p { font-size: 14px; }
+  .tab-btn { padding: 9px 8px; font-size: 11px; }
+  .tab-btn i { font-size: 12px; }
+  .tab-btn span { display: none; }
+  .skills-grid { grid-template-columns: 1fr; gap: 16px; }
+  .skill-card { padding: 18px; }
+  .skill-icon { width: 44px; height: 44px; }
+  .skill-icon i { font-size: 18px; }
+  .skill-card h3 { font-size: 15px; margin-bottom: 10px; }
+  .skill-tags { gap: 6px; }
+  .skill-tag { padding: 5px 10px; font-size: 11px; }
+  .projects-grid { grid-template-columns: 1fr; gap: 16px; }
+  .project-card { overflow: visible; }
+  .project-visual { height: 140px; }
+  .project-visual i { font-size: 40px; }
+  .project-content { padding: 16px; }
+  .project-content h3 { font-size: 15px; }
+  .project-content p { font-size: 12px; }
+  .experience-cards { grid-template-columns: 1fr; gap: 16px; }
+  .exp-card { padding: 18px; }
+  .exp-header { gap: 12px; margin-bottom: 14px; }
+  .company-icon { width: 60px; height: 60px; }
+  .company-icon i { font-size: 24px; }
+  .company-info h3 { font-size: 16px; }
+  .company-info .role { font-size: 12px; }
+  .exp-meta { gap: 12px; font-size: 10px; padding-bottom: 10px; }
+  .exp-summary { font-size: 12px; margin-bottom: 12px; }
+  .exp-tech { gap: 6px; margin-bottom: 12px; }
+  .exp-tech span { padding: 5px 9px; font-size: 10px; }
+  .contact-layout { gap: 24px; }
+  .contact-info { gap: 12px; }
+  .info-card { padding: 12px 14px; gap: 12px; }
+  .info-icon { width: 40px; height: 40px; font-size: 15px; }
+  .info-content h3 { font-size: 10px; }
+  .info-content a, .info-content p { font-size: 12px; }
+  .social-row { gap: 8px; }
+  .social-btn { width: 38px; height: 38px; font-size: 14px; }
+  .download-btn { padding: 12px 14px; font-size: 12px; gap: 8px; }
+  .contact-form { padding: 18px; gap: 16px; }
+  .form-group label { font-size: 11px; }
+  .form-group input, .form-group textarea { padding: 11px 14px; font-size: 13px; }
+  .submit-btn { padding: 13px 14px; font-size: 12px; gap: 8px; }
+  .footer-content { gap: 16px; }
+  .footer-brand { gap: 10px; }
+  .footer-brand .logo-glass { width: 36px; height: 36px; }
+  .footer-brand p { font-size: 12px; }
+  .footer-links { gap: 12px; }
+  .footer-links a { font-size: 12px; }
+  .back-to-top { right: 16px; bottom: 16px; width: 40px; height: 40px; font-size: 16px; }
+  .mobile-sidebar { width: 70%; padding: 80px 18px 40px; }
+  .mobile-sidebar-header { gap: 8px; margin-bottom: 24px; }
+  .mobile-logo { font-size: 12px; }
+  .mobile-nav-list { gap: 6px; }
+  .mobile-nav-link { padding: 12px 16px; font-size: 14px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
